@@ -1,0 +1,6 @@
+@BrochureAPI_HostAddress = http://localhost:5171
+
+GET {{BrochureAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
