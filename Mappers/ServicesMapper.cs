@@ -5,17 +5,19 @@ namespace BrochureAPI.Mappers
 {
     public static class ServicesMapper
     {
-        public static ServicesDto toServicesDto(this Services services)
+        // we convert service model to dto to read it without id or in a certain way the user want to see
+        public static ServicesDto ToServicesDto(this Services services)
         {
             return new ServicesDto
             {
-                Id = services.Id ,
+                Id = services.Id,
                 Title = services.Title,
                 Description = services.Description
             };
         }
 
-        public static Services toServices(this ServicesDto servicesDto)
+        // return create Service dto to a model to insert it into db
+        public static Services ToServices(this CreateServiceDto servicesDto)
         {
             return new Services { Title = servicesDto.Title, Description = servicesDto.Description };
         }

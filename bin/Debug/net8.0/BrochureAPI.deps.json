@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "BrochureAPI/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNet.Cors": "5.3.0",
           "Microsoft.EntityFrameworkCore.Design": "8.0.4",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.4",
           "MySql.EntityFrameworkCore": "8.0.0",
@@ -68,6 +69,14 @@
           "lib/net6.0/K4os.Hash.xxHash.dll": {
             "assemblyVersion": "1.0.8.0",
             "fileVersion": "1.0.8.0"
+          }
+        }
+      },
+      "Microsoft.AspNet.Cors/5.3.0": {
+        "runtime": {
+          "lib/net45/System.Web.Cors.dll": {
+            "assemblyVersion": "5.3.0.0",
+            "fileVersion": "5.3.61130.707"
           }
         }
       },
@@ -859,6 +868,13 @@
       "sha512": "sha512-Wp2F7BamQ2Q/7Hk834nV9vRQapgcr8kgv9Jvfm8J3D0IhDqZMMl+a2yxUq5ltJitvXvQfB8W6K4F4fCbw/P6YQ==",
       "path": "k4os.hash.xxhash/1.0.8",
       "hashPath": "k4os.hash.xxhash.1.0.8.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Cors/5.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GmnL9NNGTheEcUVSzjnFaMaCEIwWdvP6mBed1ux/7M0D2yc+uzZ6UN/gAA5mva1BZmah0G+F+MVaPkoValWpmQ==",
+      "path": "microsoft.aspnet.cors/5.3.0",
+      "hashPath": "microsoft.aspnet.cors.5.3.0.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
       "type": "package",

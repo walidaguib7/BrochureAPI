@@ -85,6 +85,15 @@
           }
         }
       },
+      "Microsoft.AspNet.Cors/5.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Web.Cors.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Cors.dll": {}
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "type": "package",
         "compile": {
@@ -1528,6 +1537,20 @@
         "lib/netstandard2.0/K4os.Hash.xxHash.xml",
         "lib/netstandard2.1/K4os.Hash.xxHash.dll",
         "lib/netstandard2.1/K4os.Hash.xxHash.xml"
+      ]
+    },
+    "Microsoft.AspNet.Cors/5.3.0": {
+      "sha512": "GmnL9NNGTheEcUVSzjnFaMaCEIwWdvP6mBed1ux/7M0D2yc+uzZ6UN/gAA5mva1BZmah0G+F+MVaPkoValWpmQ==",
+      "type": "package",
+      "path": "microsoft.aspnet.cors/5.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NET.icon.png",
+        "NET_Library_EULA_ENU.txt",
+        "lib/net45/System.Web.Cors.dll",
+        "microsoft.aspnet.cors.5.3.0.nupkg.sha512",
+        "microsoft.aspnet.cors.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
@@ -4201,6 +4224,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Microsoft.AspNet.Cors >= 5.3.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.4",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.4",
       "MySql.EntityFrameworkCore >= 8.0.0",
@@ -4214,11 +4238,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AW7\\BrochureAPI\\BrochureAPI.csproj",
+      "projectUniqueName": "D:\\AW7\\BrochureApi\\BrochureAPI.csproj",
       "projectName": "BrochureAPI",
-      "projectPath": "D:\\AW7\\BrochureAPI\\BrochureAPI.csproj",
+      "projectPath": "D:\\AW7\\BrochureApi\\BrochureAPI.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\AW7\\BrochureAPI\\obj\\",
+      "outputPath": "D:\\AW7\\BrochureApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4252,6 +4276,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Microsoft.AspNet.Cors": {
+            "target": "Package",
+            "version": "[5.3.0, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -4299,5 +4327,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Cors 5.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Cors",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
