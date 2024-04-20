@@ -26,6 +26,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddScoped<IServices, ServicesRepo>();
+builder.Services.AddScoped<ICategory, CategoryRepo>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
