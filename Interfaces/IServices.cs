@@ -6,12 +6,12 @@ namespace BrochureAPI.Interfaces
 {
     public interface IServices
     {
-        Task<List<Services>> GetAll(QueryObject query);
-        Task<Services?> GetService(int id);
-        Task<Services?> CreateService(Services service);
+        Task<List<BrochureAPI.Models.Services>> GetAll(QueryObject query);
+        Task<BrochureAPI.Models.Services?> GetService(int id);
+        Task<BrochureAPI.Models.Services?> CreateService(BrochureAPI.Models.Services service);
 
-        Task<Services> UpdateService(int id , UpdateServiceDto service);
+        Task<BrochureAPI.Models.Services> UpdateService(int id , UpdateServiceDto service);
 
-        Task<Services> DeleteService(int id);
+        Task<BrochureAPI.Models.Services> DeleteService(int id);
     }
 }

@@ -127,3 +127,17 @@ D:\AW7\BrochureAPI\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Drawin
 D:\AW7\BrochureAPI\bin\Debug\net8.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\AW7\BrochureAPI\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\AW7\BrochureApi\bin\Debug\net8.0\System.Web.Cors.dll
+D:\AW7\BrochureAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\AW7\BrochureAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\AW7\BrochureAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\AW7\BrochureAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\AW7\BrochureAPI\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+D:\AW7\BrochureAPI\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+D:\AW7\BrochureAPI\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\AW7\BrochureAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\AW7\BrochureAPI\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\AW7\BrochureAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\AW7\BrochureAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\AW7\BrochureAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\AW7\BrochureAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\AW7\BrochureAPI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

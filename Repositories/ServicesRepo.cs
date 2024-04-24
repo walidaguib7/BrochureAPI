@@ -15,14 +15,14 @@ namespace BrochureAPI.Repositories
         {
             dBContext = context;
         }
-        public async Task<Services?> CreateService(Services service)
+        public async Task<BrochureAPI.Models.Services?> CreateService(BrochureAPI.Models.Services service)
         {
             await dBContext.Services.AddAsync(service);
             await dBContext.SaveChangesAsync();
             return service;
         }
 
-        public async Task<Services?> DeleteService(int id)
+        public async Task<BrochureAPI.Models.Services?> DeleteService(int id)
         {
             var service = await dBContext.Services.FindAsync(id);
             if(service == null) {
@@ -34,7 +34,7 @@ namespace BrochureAPI.Repositories
             return service;
         }
 
-        public async Task<List<Services>> GetAll(QueryObject query)
+        public async Task<List<BrochureAPI.Models.Services>> GetAll(QueryObject query)
         {
             var services = dBContext.Services.AsQueryable();
 
@@ -56,12 +56,12 @@ namespace BrochureAPI.Repositories
 
         }
 
-        public async Task<Services?> GetService(int id)
+        public async Task<BrochureAPI.Models.Services?> GetService(int id)
         {
             return await dBContext.Services.FirstOrDefaultAsync(s => s.Id == id);
         }
 
-        public async Task<Services> UpdateService(int id, UpdateServiceDto serviceDto)
+        public async Task<BrochureAPI.Models.Services> UpdateService(int id, UpdateServiceDto serviceDto)
         {
             var service = await dBContext.Services.FirstOrDefaultAsync(s => s.Id == id);
             if(service == null)
