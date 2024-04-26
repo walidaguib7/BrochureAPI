@@ -70,6 +70,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddScoped<IServices, ServicesRepo>();
 builder.Services.AddScoped<ICategory, CategoryRepo>();
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IBlog, BlogRepo>();
 
 builder.Services.AddIdentity<User, IdentityRole>(options =>
 {

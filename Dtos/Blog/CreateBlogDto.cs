@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace BrochureAPI.Dtos.Blog
 {
@@ -11,6 +12,7 @@ namespace BrochureAPI.Dtos.Blog
         [Required]
         public string Description { get; set; }
         [Required]
-        public string Image { get; set; }
+        
+        public IFormFile Image { get; set; }
     }
 }

@@ -12,6 +12,7 @@ namespace BrochureAPI.Controllers
 
     [Route("api/user")]
     [ApiController]
+    
     public class UserController(UserManager<User> userManager, ITokenService tokenService , SignInManager<User> manager) : ControllerBase
     {
         private readonly UserManager<User> userManager = userManager;
