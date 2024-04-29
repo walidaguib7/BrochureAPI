@@ -1,5 +1,6 @@
 ﻿using BrochureAPI.Data;
 using BrochureAPI.Dtos.Blog;
+using BrochureAPI.Extensions;
 using BrochureAPI.Helpers;
 using BrochureAPI.Interfaces;
 using BrochureAPI.Mappers;
@@ -7,6 +8,7 @@ using BrochureAPI.Models;
 using BrochureAPI.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BrochureAPI.Controllers
@@ -18,10 +20,13 @@ namespace BrochureAPI.Controllers
         private readonly ApplicationDBContext _context;
         private readonly IBlog _BlogRepo;
         private readonly User user;
-        public BlogController(ApplicationDBContext context , IBlog BlogRepo)
+        private readonly UserManager<User> _manager;
+        public BlogController(ApplicationDBContext context , IBlog BlogRepo , UserManager<User> manager)
         {
             _context = context;
             _BlogRepo = BlogRepo;
+            _manager = manager;
+
         }
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] BlogQuery query)
@@ -56,16 +61,24 @@ namespace BrochureAPI.Controllers
 
         }
 
-
         [HttpPost]
         [Route("{id:int}")]
-        public async Task<IActionResult> CreateBlog([FromBody] CreateBlogDto blogDto  , [FromRoute] int id)
+        [Authorize]
+        public async Task<IActionResult> CreateBlogs([FromRoute] int id , [FromBody] CreateBlogDto blogDto)
         {
-            
-            var blog = await blogDto.ToBlogModel(id,user.Id);
-            var BlogModel = await _BlogRepo.CreateBlog(blog);
-            return Ok(BlogModel.ToBlogDto());
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            var user = await _manager.FindByNameAsync(User.GetUsername());
+            if(user == null)
+            {
+                return NotFound();
+            }
+            var blog = blogDto.ToBlogModel(id, user.Id);
+            await _BlogRepo.CreateAsync(blog);
+            return Ok("Blog Created");
         }
+
+
+
 
 
 

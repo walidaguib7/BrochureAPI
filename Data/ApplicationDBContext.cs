@@ -17,6 +17,8 @@ namespace BrochureAPI.Data
 
         public DbSet<Blog> Blogs { get; set; }
 
+        public DbSet<FilesModel> Files { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

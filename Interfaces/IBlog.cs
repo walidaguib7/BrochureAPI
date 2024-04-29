@@ -8,8 +8,9 @@ namespace BrochureAPI.Interfaces
     {
         Task<List<Blog>> GetAllBlogs(BlogQuery query);
         Task<Blog?> GetBlog(int id);
-        Task<Blog?> CreateBlog(Blog blog);
+        Task<Blog> CreateAsync(Blog blog);
         Task<Blog?> UpdateBlog(int id , UpdateBlogDto updateBlogDto);
         Task<Blog?> DeleteBlog(int id);
+        
     }
 }

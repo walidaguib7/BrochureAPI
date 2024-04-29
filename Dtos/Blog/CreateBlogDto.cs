@@ -12,7 +12,9 @@ namespace BrochureAPI.Dtos.Blog
         [Required]
         public string Description { get; set; }
         [Required]
+
+        public int CategoryId { get; set; }
         
-        public IFormFile Image { get; set; }
+        
     }
 }
