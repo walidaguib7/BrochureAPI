@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CWjtvJxzZZhf+6Rp7qz8TEpAJBWoWMivoCNJvd7KkYtM+Dje89p2R8ixXgrv7qxBBxaUDHDQo404kgQosaJi4A==",
+  "dgSpecHash": "xmJsoVgTmWqsq/uNZCKM0oP83KL7ye2lK2LCXZxM5whjXw0GJxc+0zUyatpMSLAjH57kKJTDR/OPymGtTPdHqw==",
   "success": true,
-  "projectFilePath": "D:\\AW7\\BrochureApi\\BrochureAPI.csproj",
+  "projectFilePath": "D:\\AW7\\BrochureAPI\\BrochureAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",

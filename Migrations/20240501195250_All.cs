@@ -59,7 +59,7 @@ namespace BrochureAPI.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Categories",
+                name: "Category",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -69,7 +69,7 @@ namespace BrochureAPI.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
+                    table.PrimaryKey("PK_Category", x => x.Id);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -85,6 +85,21 @@ namespace BrochureAPI.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Files", x => x.Id);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Messages",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Email = table.Column<string>(type: "longtext", nullable: false),
+                    Message = table.Column<string>(type: "longtext", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Messages", x => x.Id);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -236,9 +251,9 @@ namespace BrochureAPI.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Blog_Categories_CategoryId",
+                        name: "FK_Blog_Category_CategoryId",
                         column: x => x.CategoryId,
-                        principalTable: "Categories",
+                        principalTable: "Category",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Blog_Files_FileId",
@@ -254,8 +269,8 @@ namespace BrochureAPI.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "0c13ffc2-cf8f-466d-b7cd-07c46d6eadad", null, "admin", "ADMIN" },
-                    { "535ff8c3-3e6f-4123-97c2-d2064c0b59cc", null, "user", "USER" }
+                    { "03b6218b-77c7-45fb-84f4-28a3f9f52dfc", null, "admin", "ADMIN" },
+                    { "f2700b2f-e419-4b40-9dd4-314df8d63d10", null, "user", "USER" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -333,6 +348,9 @@ namespace BrochureAPI.Migrations
                 name: "Blog");
 
             migrationBuilder.DropTable(
+                name: "Messages");
+
+            migrationBuilder.DropTable(
                 name: "Services");
 
             migrationBuilder.DropTable(
@@ -342,7 +360,7 @@ namespace BrochureAPI.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "Category");
 
             migrationBuilder.DropTable(
                 name: "Files");

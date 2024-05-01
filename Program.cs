@@ -72,6 +72,7 @@ builder.Services.AddScoped<ICategory, CategoryRepo>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IBlog, BlogRepo>();
 builder.Services.AddScoped<IFiles, FilesRepo>();
+builder.Services.AddScoped<IMessages, MessagesRepo>();
 
 builder.Services.AddIdentity<User, IdentityRole>(options =>
 {

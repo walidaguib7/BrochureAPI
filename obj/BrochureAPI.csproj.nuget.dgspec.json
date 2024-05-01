@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AW7\\BrochureApi\\BrochureAPI.csproj": {}
+    "D:\\AW7\\BrochureAPI\\BrochureAPI.csproj": {}
   },
   "projects": {
-    "D:\\AW7\\BrochureApi\\BrochureAPI.csproj": {
+    "D:\\AW7\\BrochureAPI\\BrochureAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AW7\\BrochureApi\\BrochureAPI.csproj",
+        "projectUniqueName": "D:\\AW7\\BrochureAPI\\BrochureAPI.csproj",
         "projectName": "BrochureAPI",
-        "projectPath": "D:\\AW7\\BrochureApi\\BrochureAPI.csproj",
+        "projectPath": "D:\\AW7\\BrochureAPI\\BrochureAPI.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\AW7\\BrochureApi\\obj\\",
+        "outputPath": "D:\\AW7\\BrochureAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

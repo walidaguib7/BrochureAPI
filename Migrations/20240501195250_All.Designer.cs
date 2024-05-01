@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BrochureAPI.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240501170152_All")]
+    [Migration("20240501195250_All")]
     partial class All
     {
         /// <inheritdoc />
@@ -76,7 +76,7 @@ namespace BrochureAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Category");
                 });
 
             modelBuilder.Entity("BrochureAPI.Models.FilesModel", b =>
@@ -96,6 +96,25 @@ namespace BrochureAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Files");
+                });
+
+            modelBuilder.Entity("BrochureAPI.Models.Messages", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("BrochureAPI.Models.Services", b =>
@@ -209,13 +228,13 @@ namespace BrochureAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "0c13ffc2-cf8f-466d-b7cd-07c46d6eadad",
+                            Id = "03b6218b-77c7-45fb-84f4-28a3f9f52dfc",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "535ff8c3-3e6f-4123-97c2-d2064c0b59cc",
+                            Id = "f2700b2f-e419-4b40-9dd4-314df8d63d10",
                             Name = "user",
                             NormalizedName = "USER"
                         });
