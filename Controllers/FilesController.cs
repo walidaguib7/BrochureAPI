@@ -16,44 +16,20 @@ namespace BrochureAPI.Controllers
         }
 
         [HttpPost]
-        [Route("{id:int}")]
-        public async Task<IActionResult> UploadFile([FromRoute] int id ,  IFormFile file)
+        public async Task<IActionResult> UploadFiles(IFormFile BImage , IFormFile SImage)
         {
-            if (file.Length == 0 || file == null)
-            {
-                throw new Exception("file Not Found!");
-            }
-            if (file.Length > 1048576) // 1 MB limit
-            {
-                throw new Exception("The maximum file size must be 1mb!");
-            }
-            var AllowedExtensions = new List<string> { ".jpg", ".jpeg", ".png" };
-            var extension = Path.GetExtension(file.FileName).ToLower();
-            if (!AllowedExtensions.Contains(extension))
-            {
-                throw new Exception("Invalid file format. Only JPG, JPEG, and PNG files are allowed.");
-            }
-            string fileName = Path.GetFileName(file.FileName);
-            string uniqueFileName = Guid.NewGuid().ToString() + "_" + fileName;
-            string filePath = Path.Combine(@"D:\AW7\BrochureAPI\Uploads\Blog", uniqueFileName);
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            var BigImage = await _repo.UploadImage(BImage, false);
+            var SmallImage = await _repo.UploadImage(SImage, true);
 
-            try
+            var files = await _repo.UploadFile(new Models.FilesModel { Content_Image = BigImage, Description_Image = SmallImage });
+            if(files == null)
             {
-                await using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await file.CopyToAsync(stream);
-                }
-
-
+                return NotFound();
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            var files = await _repo.UploadFile(new Models.FilesModel{ FilePath = filePath, BlogId = id });
 
             return Ok(files);
         }
+        
     }
 }

@@ -5,8 +5,9 @@ namespace BrochureAPI.Dtos.Files
     public class UploadFileDto
     {
         [Required]
-        public string FilePath { get; set; }
+        public string Content_Image { get; set; }
         [Required]
-        public int BlogId { get; set; }
+        public string Description_Image { get; set; }
+
     }
 }

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BrochureAPI.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240429172704_All")]
+    [Migration("20240501170152_All")]
     partial class All
     {
         /// <inheritdoc />
@@ -39,6 +39,9 @@ namespace BrochureAPI.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<int>("FileId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -49,6 +52,8 @@ namespace BrochureAPI.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("FileId");
 
                     b.HasIndex("UserId");
 
@@ -80,16 +85,15 @@ namespace BrochureAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("BlogId")
-                        .HasColumnType("int");
+                    b.Property<string>("Content_Image")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
-                    b.Property<string>("FilePath")
+                    b.Property<string>("Description_Image")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BlogId");
 
                     b.ToTable("Files");
                 });
@@ -205,13 +209,13 @@ namespace BrochureAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9adecfcb-5cd7-45e0-a25c-559837d13662",
+                            Id = "0c13ffc2-cf8f-466d-b7cd-07c46d6eadad",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "08a7289d-11c3-4008-92c9-3025b19bd7cc",
+                            Id = "535ff8c3-3e6f-4123-97c2-d2064c0b59cc",
                             Name = "user",
                             NormalizedName = "USER"
                         });
@@ -325,24 +329,21 @@ namespace BrochureAPI.Migrations
                         .WithMany()
                         .HasForeignKey("CategoryId");
 
+                    b.HasOne("BrochureAPI.Models.FilesModel", "file")
+                        .WithMany()
+                        .HasForeignKey("FileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BrochureAPI.Models.User", "user")
                         .WithMany()
                         .HasForeignKey("UserId");
 
                     b.Navigation("category");
 
+                    b.Navigation("file");
+
                     b.Navigation("user");
-                });
-
-            modelBuilder.Entity("BrochureAPI.Models.FilesModel", b =>
-                {
-                    b.HasOne("BrochureAPI.Models.Blog", "blogs")
-                        .WithMany()
-                        .HasForeignKey("BlogId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("blogs");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

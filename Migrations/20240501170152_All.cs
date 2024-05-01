@@ -74,6 +74,21 @@ namespace BrochureAPI.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "Files",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Content_Image = table.Column<string>(type: "longtext", nullable: false),
+                    Description_Image = table.Column<string>(type: "longtext", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Files", x => x.Id);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Services",
                 columns: table => new
                 {
@@ -209,7 +224,8 @@ namespace BrochureAPI.Migrations
                     Content = table.Column<string>(type: "longtext", nullable: false),
                     Description = table.Column<string>(type: "longtext", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: true),
-                    UserId = table.Column<string>(type: "varchar(255)", nullable: true)
+                    UserId = table.Column<string>(type: "varchar(255)", nullable: true),
+                    FileId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -224,25 +240,10 @@ namespace BrochureAPI.Migrations
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id");
-                })
-                .Annotation("MySQL:Charset", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Files",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    FilePath = table.Column<string>(type: "longtext", nullable: false),
-                    BlogId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Files", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Files_Blog_BlogId",
-                        column: x => x.BlogId,
-                        principalTable: "Blog",
+                        name: "FK_Blog_Files_FileId",
+                        column: x => x.FileId,
+                        principalTable: "Files",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -253,8 +254,8 @@ namespace BrochureAPI.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "08a7289d-11c3-4008-92c9-3025b19bd7cc", null, "user", "USER" },
-                    { "9adecfcb-5cd7-45e0-a25c-559837d13662", null, "admin", "ADMIN" }
+                    { "0c13ffc2-cf8f-466d-b7cd-07c46d6eadad", null, "admin", "ADMIN" },
+                    { "535ff8c3-3e6f-4123-97c2-d2064c0b59cc", null, "user", "USER" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -300,14 +301,14 @@ namespace BrochureAPI.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Blog_FileId",
+                table: "Blog",
+                column: "FileId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Blog_UserId",
                 table: "Blog",
                 column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Files_BlogId",
-                table: "Files",
-                column: "BlogId");
         }
 
         /// <inheritdoc />
@@ -329,7 +330,7 @@ namespace BrochureAPI.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Files");
+                name: "Blog");
 
             migrationBuilder.DropTable(
                 name: "Services");
@@ -338,13 +339,13 @@ namespace BrochureAPI.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Blog");
-
-            migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Files");
         }
     }
 }

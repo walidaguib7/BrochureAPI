@@ -4,9 +4,7 @@
     {
         public int Id { get; set; }
 
-        public string FilePath { get; set; }
-        public int BlogId { get; set; }
-
-        public Blog blogs { get; set; }
+        public string Content_Image { get; set; }
+        public string Description_Image { get; set; }
     }
 }

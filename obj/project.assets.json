@@ -4730,11 +4730,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AW7\\BrochureAPI\\BrochureAPI.csproj",
+      "projectUniqueName": "D:\\AW7\\BrochureApi\\BrochureAPI.csproj",
       "projectName": "BrochureAPI",
-      "projectPath": "D:\\AW7\\BrochureAPI\\BrochureAPI.csproj",
+      "projectPath": "D:\\AW7\\BrochureApi\\BrochureAPI.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\AW7\\BrochureAPI\\obj\\",
+      "outputPath": "D:\\AW7\\BrochureApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

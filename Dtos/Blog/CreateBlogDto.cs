@@ -11,10 +11,10 @@ namespace BrochureAPI.Dtos.Blog
         public string Content { get; set; }
         [Required]
         public string Description { get; set; }
-        [Required]
 
-        public int CategoryId { get; set; }
-        
-        
+        [Required]
+        public int FileId { get; set; }
+
+
     }
 }

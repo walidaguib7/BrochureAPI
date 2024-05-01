@@ -16,9 +16,13 @@ namespace BrochureAPI.Models
         public int? CategoryId { get; set; }
         public string? UserId { get; set; }
 
+        public int FileId { get; set; }
+
         public Category category { get; set; }
 
         public User user { get; set; }
+
+        public FilesModel file { get; set; }
 
 
     }
