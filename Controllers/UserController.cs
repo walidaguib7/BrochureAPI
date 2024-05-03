@@ -90,6 +90,7 @@ namespace BrochureAPI.Controllers
             return Ok(
                 new NewUser
                 {
+                    UserId = user.Id,
                     UserName = loginDto.Username,
                     Email = user.Email,
                     Token = _tokenService.CreateToken(user)
