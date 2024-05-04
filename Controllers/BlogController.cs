@@ -77,6 +77,20 @@ namespace BrochureAPI.Controllers
             return Ok("Blog Created");
         }
 
+        [HttpPut]
+        [Route("{id:int}")]
+        [Authorize]
+        public async Task<IActionResult> UpdateBlog([FromRoute] int id , [FromBody] UpdateBlogDto blogDto)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            var blog = await _BlogRepo.UpdateBlog(id, blogDto);
+            if(blog == null){
+                return NotFound();
+            };
+
+            return Ok(blog.ToBlogDto());
+        }
+
 
 
 

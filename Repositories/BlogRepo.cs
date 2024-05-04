@@ -64,9 +64,21 @@ namespace BrochureAPI.Repositories
             return blog;
         }
 
-        public Task<Blog?> UpdateBlog(int id, UpdateBlogDto updateBlogDto)
+        public async Task<Blog?> UpdateBlog(int id, UpdateBlogDto updateBlogDto)
         {
-            throw new NotImplementedException();
+            var blog = await _context.Blogs.FirstOrDefaultAsync(b => b.Id == id);
+            if(blog == null)
+            {
+                return null;
+            };
+            blog.Title = updateBlogDto.Title;
+            blog.Description = updateBlogDto.Description;
+            blog.Content = updateBlogDto.Content;
+            blog.CategoryId = updateBlogDto.CategoryId;
+            blog.FileId = updateBlogDto.FileId;
+            await _context.SaveChangesAsync();
+            return blog;
+            
         }
     }
 }
