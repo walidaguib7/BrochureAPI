@@ -21,6 +21,8 @@ namespace BrochureAPI.Data
 
         public DbSet<Messages> Messages { get; set; }
 
+        public DbSet<FeedBack> FeedBacks { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

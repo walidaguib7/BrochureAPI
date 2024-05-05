@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BrochureAPI.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240501195250_All")]
+    [Migration("20240505013713_All")]
     partial class All
     {
         /// <inheritdoc />
@@ -77,6 +77,28 @@ namespace BrochureAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Category");
+                });
+
+            modelBuilder.Entity("BrochureAPI.Models.FeedBack", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Testimonial")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("rating")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FeedBacks");
                 });
 
             modelBuilder.Entity("BrochureAPI.Models.FilesModel", b =>
@@ -228,13 +250,13 @@ namespace BrochureAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "03b6218b-77c7-45fb-84f4-28a3f9f52dfc",
+                            Id = "7f5fc564-8023-4342-a981-b58339078522",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "f2700b2f-e419-4b40-9dd4-314df8d63d10",
+                            Id = "7d6dd283-38f5-4233-b61a-c32ced5599b3",
                             Name = "user",
                             NormalizedName = "USER"
                         });

@@ -74,6 +74,22 @@ namespace BrochureAPI.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "FeedBacks",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Username = table.Column<string>(type: "longtext", nullable: false),
+                    Testimonial = table.Column<string>(type: "longtext", nullable: false),
+                    rating = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FeedBacks", x => x.Id);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Files",
                 columns: table => new
                 {
@@ -269,8 +285,8 @@ namespace BrochureAPI.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "03b6218b-77c7-45fb-84f4-28a3f9f52dfc", null, "admin", "ADMIN" },
-                    { "f2700b2f-e419-4b40-9dd4-314df8d63d10", null, "user", "USER" }
+                    { "7d6dd283-38f5-4233-b61a-c32ced5599b3", null, "user", "USER" },
+                    { "7f5fc564-8023-4342-a981-b58339078522", null, "admin", "ADMIN" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -346,6 +362,9 @@ namespace BrochureAPI.Migrations
 
             migrationBuilder.DropTable(
                 name: "Blog");
+
+            migrationBuilder.DropTable(
+                name: "FeedBacks");
 
             migrationBuilder.DropTable(
                 name: "Messages");

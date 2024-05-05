@@ -47,13 +47,6 @@ builder.Services.AddSwaggerGen(option =>
     });
 });
 
-
-
-
-
-
-
-
 builder.Services.AddDbContext<ApplicationDBContext>(options => {
     options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
@@ -73,6 +66,7 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IBlog, BlogRepo>();
 builder.Services.AddScoped<IFiles, FilesRepo>();
 builder.Services.AddScoped<IMessages, MessagesRepo>();
+builder.Services.AddScoped<IFeed, FeedBackRepo>();
 
 builder.Services.AddIdentity<User, IdentityRole>(options =>
 {
