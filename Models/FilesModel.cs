@@ -7,7 +7,6 @@ namespace BrochureAPI.Models
     {
         public int Id { get; set; }
 
-        public string Content_Image { get; set; }
-        public string Description_Image { get; set; }
+        public string Image { get; set; }
     }
 }

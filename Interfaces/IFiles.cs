@@ -6,7 +6,7 @@ namespace BrochureAPI.Interfaces
     {
         Task<FilesModel> UploadFile(FilesModel file);
 
-        Task<string> UploadImage(IFormFile file , bool IsSmall);
+        Task<string> UploadImage(IFormFile file);
 
         
     }

@@ -74,7 +74,7 @@ namespace BrochureAPI.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "FeedBacks",
+                name: "FeedBack",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -85,7 +85,7 @@ namespace BrochureAPI.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FeedBacks", x => x.Id);
+                    table.PrimaryKey("PK_FeedBack", x => x.Id);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -95,8 +95,7 @@ namespace BrochureAPI.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Content_Image = table.Column<string>(type: "longtext", nullable: false),
-                    Description_Image = table.Column<string>(type: "longtext", nullable: false)
+                    Image = table.Column<string>(type: "longtext", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -285,8 +284,8 @@ namespace BrochureAPI.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "7d6dd283-38f5-4233-b61a-c32ced5599b3", null, "user", "USER" },
-                    { "7f5fc564-8023-4342-a981-b58339078522", null, "admin", "ADMIN" }
+                    { "4a2507e4-c394-4584-a2f9-153dbab16a96", null, "user", "USER" },
+                    { "5756e35e-1b32-41f6-b454-289dc7f18342", null, "admin", "ADMIN" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -364,7 +363,7 @@ namespace BrochureAPI.Migrations
                 name: "Blog");
 
             migrationBuilder.DropTable(
-                name: "FeedBacks");
+                name: "FeedBack");
 
             migrationBuilder.DropTable(
                 name: "Messages");

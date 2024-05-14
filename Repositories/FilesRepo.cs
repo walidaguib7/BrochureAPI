@@ -22,15 +22,11 @@ namespace BrochureAPI.Repositories
             return file;
         }
 
-        public async Task<string> UploadImage(IFormFile file , bool IsSmall)
+        public async Task<string> UploadImage(IFormFile file)
         {
             if (file.Length == 0 || file == null)
             {
                 throw new Exception("file Not Found!");
-            }
-            if (file.Length > 1048576 && IsSmall == true) // 1 MB limit
-            {
-                throw new Exception("The maximum file size must be 1mb!");
             }
             var AllowedExtensions = new List<string> { ".jpg", ".jpeg", ".png" };
             var extension = Path.GetExtension(file.FileName).ToLower();

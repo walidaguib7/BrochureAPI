@@ -16,13 +16,13 @@ namespace BrochureAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UploadFiles(IFormFile BImage , IFormFile SImage)
+        public async Task<IActionResult> UploadFiles(IFormFile file)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-            var BigImage = await _repo.UploadImage(BImage, false);
-            var SmallImage = await _repo.UploadImage(SImage, true);
+            var Image = await _repo.UploadImage(file);
 
-            var files = await _repo.UploadFile(new Models.FilesModel { Content_Image = BigImage, Description_Image = SmallImage });
+
+            var files = await _repo.UploadFile(new Models.FilesModel { Image = Image });
             if(files == null)
             {
                 return NotFound();

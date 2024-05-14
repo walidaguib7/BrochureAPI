@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BrochureAPI.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240505013713_All")]
+    [Migration("20240514140146_All")]
     partial class All
     {
         /// <inheritdoc />
@@ -98,7 +98,7 @@ namespace BrochureAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FeedBacks");
+                    b.ToTable("FeedBack");
                 });
 
             modelBuilder.Entity("BrochureAPI.Models.FilesModel", b =>
@@ -107,11 +107,7 @@ namespace BrochureAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Content_Image")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Description_Image")
+                    b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -250,13 +246,13 @@ namespace BrochureAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7f5fc564-8023-4342-a981-b58339078522",
+                            Id = "5756e35e-1b32-41f6-b454-289dc7f18342",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "7d6dd283-38f5-4233-b61a-c32ced5599b3",
+                            Id = "4a2507e4-c394-4584-a2f9-153dbab16a96",
                             Name = "user",
                             NormalizedName = "USER"
                         });
