@@ -29,7 +29,8 @@ namespace BrochureAPI.Controllers
 
         }
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] BlogQuery query)
+        
+        public async Task<IActionResult> GetAll([FromQuery] BlogQuery query )
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             var blogs = await _BlogRepo.GetAllBlogs(query);

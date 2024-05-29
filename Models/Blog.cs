@@ -25,5 +25,7 @@ namespace BrochureAPI.Models
         public FilesModel file { get; set; }
 
 
+
+
     }
 }

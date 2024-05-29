@@ -37,9 +37,15 @@ namespace BrochureAPI.Repositories
             return blog;
         }
 
+
+        
         public async Task<List<Blog>> GetAllBlogs(BlogQuery query)
         {
-            var blogs =  _context.Blogs.Include(c => c.category).AsQueryable();
+            var blogs =  _context.Blogs
+                .Include(b => b.file)
+                .Include(b => b.category )
+                .Include(b => b.user)
+                .AsQueryable();
 
             if (!string.IsNullOrEmpty(query.Title))
             {

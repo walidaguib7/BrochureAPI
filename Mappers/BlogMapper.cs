@@ -6,17 +6,24 @@ namespace BrochureAPI.Mappers
 {
     public static class BlogMapper
     {
-        public static BlogDto ToBlogDto(this Blog blog) => new BlogDto
+        public static BlogDto ToBlogDto(this Blog blog)
         {
-            Id = blog.Id,
-            Title = blog.Title,
-            Description = blog.Description,
-            Content = blog.Content,
-            FileId = blog.FileId,
-            CategoryId = (int)blog.CategoryId
+            return new BlogDto
+            {
+                Id = blog.Id,
+                Title = blog.Title,
+                Description = blog.Description,
+                Content = blog.Content,
+                FileId = blog.FileId,
+                CategoryId = (int)blog.CategoryId,
+                Image = blog.file.Image,
+                UserId = blog.UserId,
+                category_title = blog.category.Title , 
+                username = blog.user.UserName
 
-        };
 
+            };
+        }
 
         public static  Blog ToBlogModel(this CreateBlogDto blog , int id , string user)
         
