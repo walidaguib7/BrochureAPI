@@ -1,6 +1,6 @@
 ﻿using BrochureAPI.Dtos.Blog;
 using BrochureAPI.Models;
-using BrochureAPI.Repositories;
+
 
 namespace BrochureAPI.Mappers
 {
@@ -18,8 +18,11 @@ namespace BrochureAPI.Mappers
                 CategoryId = (int)blog.CategoryId,
                 Image = blog.file.Image,
                 UserId = blog.UserId,
-                category_title = blog.category.Title , 
-                username = blog.user.UserName
+                category_title = blog.category.Title,
+                username = blog.user.UserName,
+                
+                
+                
 
 
             };

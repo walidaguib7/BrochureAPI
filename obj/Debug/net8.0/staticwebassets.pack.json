@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\AW7\\BrochureAPI\\wwwroot\\3ff8751b-0018-435d-b537-e8dedf9b7503_Screenshot 2024-03-20 193319.png",
+      "PackagePath": "staticwebassets\\3ff8751b-0018-435d-b537-e8dedf9b7503_Screenshot 2024-03-20 193319.png"
+    },
+    {
+      "Id": "D:\\AW7\\BrochureAPI\\wwwroot\\459746bd-2f94-4478-afe9-f3a6779e7efd_wp5542612.jpg",
+      "PackagePath": "staticwebassets\\459746bd-2f94-4478-afe9-f3a6779e7efd_wp5542612.jpg"
+    },
+    {
+      "Id": "D:\\AW7\\BrochureAPI\\wwwroot\\9c0193df-b05f-49c6-8569-e651903c05e4_Screenshot 2024-03-20 193319.png",
+      "PackagePath": "staticwebassets\\9c0193df-b05f-49c6-8569-e651903c05e4_Screenshot 2024-03-20 193319.png"
+    },
+    {
+      "Id": "D:\\AW7\\BrochureAPI\\wwwroot\\fc9b25af-80dc-43f3-a88e-413ea7a411ee_Screenshot 2024-03-18 184441.png",
+      "PackagePath": "staticwebassets\\fc9b25af-80dc-43f3-a88e-413ea7a411ee_Screenshot 2024-03-18 184441.png"
+    },
+    {
+      "Id": "D:\\AW7\\BrochureAPI\\wwwroot\\uploads\\629ccb28-68fe-4dcd-aafb-174ba1177b1a_wp5542612.jpg",
+      "PackagePath": "staticwebassets\\uploads\\629ccb28-68fe-4dcd-aafb-174ba1177b1a_wp5542612.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BrochureAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BrochureAPI.props",
+      "PackagePath": "build\\BrochureAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BrochureAPI.props",
+      "PackagePath": "buildMultiTargeting\\BrochureAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BrochureAPI.props",
+      "PackagePath": "buildTransitive\\BrochureAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

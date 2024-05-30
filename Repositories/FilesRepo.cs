@@ -4,15 +4,18 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Linq;
 using BrochureAPI.Data;
 using Microsoft.AspNetCore.Mvc;
+using static System.Net.WebRequestMethods;
 
 namespace BrochureAPI.Repositories
 {
     public class FilesRepo : IFiles
     {
         private readonly ApplicationDBContext _context;
-        public FilesRepo(ApplicationDBContext context)
+        private readonly IWebHostEnvironment environment;
+        public FilesRepo(ApplicationDBContext context , IWebHostEnvironment environment)
         {
             _context = context;
+            this.environment = environment;
         }
 
         public async Task<FilesModel> UploadFile(FilesModel file)
@@ -36,7 +39,7 @@ namespace BrochureAPI.Repositories
             }
             string fileName = Path.GetFileName(file.FileName);
             string uniqueFileName = Guid.NewGuid().ToString() + "_" + fileName;
-            string filePath = Path.Combine(@"D:\AW7\BrochureAPI\Uploads\Blog", uniqueFileName);
+            string filePath = Path.Combine("Images",uniqueFileName);
 
             try
             {
