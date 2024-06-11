@@ -55,7 +55,7 @@ namespace BrochureAPI.Repositories
                 Console.WriteLine(ex.Message);
             }
 
-            return filePath;
+            return uniqueFileName;
 
         }
     }
