@@ -15,7 +15,7 @@ namespace BrochureAPI.Mappers
                 Description = blog.Description,
                 Content = blog.Content,
                 FileId = blog.FileId,
-                CategoryId = (int)blog.CategoryId,
+                CategoryId = blog.category.Id,
                 Image = blog.file.Image,
                 UserId = blog.UserId,
                 category_title = blog.category.Title,

@@ -66,8 +66,9 @@ namespace BrochureAPI.Repositories
 
         public async Task<Blog?> GetBlog(int id)
         {
-            var blog = await _context.Blogs.FirstOrDefaultAsync(b => b.Id == id);
-            return blog;
+            return await _context.Blogs.Include(b => b.file)
+                .Include(b => b.category)
+                .Include(b => b.user).FirstOrDefaultAsync(b => b.Id == id);
         }
 
         public async Task<Blog?> UpdateBlog(int id, UpdateBlogDto updateBlogDto)
